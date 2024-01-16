@@ -10,15 +10,15 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+        <div class="navbar-collapse collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0 nav-pills">
             {{- $currentPage := . -}}
             {{ range .Site.Menus.main -}}
-                <li class='nav-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}'>
+                <li class='nav-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }} bg-light py-1 my-2 mx-1'>
                     <a class="nav-link" href="{{ .URL }}"> {{ .Name }}</a>
                 </li>
             {{ end }} 
-            <li class="nav-item px-2 pt-1">
+            <li class="nav-item px-1 mt-1 pt-2">
                 <a class="btn fas fa-moon" id="dark-mode-toggle"></a>
             </li>
             </ul>

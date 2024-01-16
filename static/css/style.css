@@ -182,7 +182,7 @@ code {
 }
 
 .bio {
-  max-width: 750px;
+  max-width: 700px;
   font-weight: 250;
   font-family: var(--summary);
 }
