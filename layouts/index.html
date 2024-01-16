@@ -1,20 +1,30 @@
 {{ define "main" }}
-<div class="mt-5 pt-5 pb-1">
+<div class="mt-5 mb-3">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="name display-3"><b>{{ .Site.Params.Name }}</b></h1>
-                <h2 class="bio lh-base mb-5">{{ .Site.Params.Description }}</h2>
+                <h1 class="name display-3 pt-5 pb-1"><b>{{ .Site.Params.Name }}</b></h1>
+                <h2 class="bio lh-base mb-4">{{ .Site.Params.Description }}</h2>
             </div>
             <div class="col-md-6 d-flex justify-content-center">
-                <img src="https://images.pexels.com/photos/2381596/pexels-photo-2381596.jpeg?cs=srgb&dl=pexels-cesar-de-miranda-2381596.jpg&fm=jpg" class="img-fluid" style="max-height: 300px;">
+				<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000"  style="height: 350px; overflow: hidden;"> <!-- replace with your image directory -->
+					<div class="carousel-inner">
+						{{ $path := "static/img/carousel" }} <!-- replace with your image directory -->
+						{{ $files := readDir $path }}
+						{{ range $index, $file := $files }}
+							<div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
+								<img class="d-block w-100" src="img/carousel/{{ $file.Name }}" alt="{{$file.Name}}">
+							</div>
+						{{ end }}
+					</div>
+				  </div>
             </div>
         </div>
     </div>
 </div>
 
 <div class="container py-3">
-	<div class="row justify-content-between my-5">
+	<div class="row justify-content-between my-2">
 		<!-- Projects -->
 		<div class="col-lg-6">
 			{{ with .Site.GetPage "section" "projects" }}
