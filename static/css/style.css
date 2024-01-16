@@ -8,7 +8,7 @@
     --white: #fff;
     --offwhite: #fafafa;
     --title: 'Mulish', sans-serif;
-    --summary: 'Frank Ruhl Libre', serif;
+    --summary: 'Mulish', sans-serif;
     --headings: 'Encode Sans Semi Condensed', sans-serif;
 }
 
@@ -183,7 +183,7 @@ code {
 
 .bio {
   max-width: 750px;
-  font-weight: 200;
+  font-weight: 250;
   font-family: var(--summary);
 }
 .heading {
